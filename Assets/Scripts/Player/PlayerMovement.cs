@@ -55,7 +55,7 @@ public class PlayerMovement : NetworkBehaviour
     void JumpRpc()
     {
         if(IsGrounded())
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
     }
 
     bool IsGrounded()

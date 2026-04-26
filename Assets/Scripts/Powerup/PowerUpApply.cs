@@ -12,7 +12,7 @@ public class PowerUpApply : NetworkBehaviour
         if(IsServer){
             if (other.CompareTag("Player"))
             {
-                other.gameObject.SendMessage("ApplyDamage", -POWER);
+                other.gameObject.SendMessage("RestoreHealth", POWER);
 
                 AudioSource.PlayClipAtPoint(clip, transform.position);
                 

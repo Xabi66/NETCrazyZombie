@@ -60,7 +60,6 @@ public class ZombieMove : NetworkBehaviour
         NavMeshPath path = new NavMeshPath();
         if (agent.CalculatePath(targetPosition, path))
         {
-            Debug.Log("path.status: " + path.status);
             return path.status == NavMeshPathStatus.PathComplete; // Only returns true if path is fully reachable
         }
         return false;

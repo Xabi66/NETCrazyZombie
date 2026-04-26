@@ -9,7 +9,8 @@ public class ZombieBite : NetworkBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             if(IsServer){
-                other.gameObject.GetComponent<PlayerManager>().ApplyDamageRpc(PLAYER_DAMAGE);
+                //other.gameObject.GetComponent<PlayerManager>().ApplyDamageRpc(PLAYER_DAMAGE);
+                other.gameObject.GetComponent<PlayerHealth>().TakeDamage(PLAYER_DAMAGE);
             }
         }
     }
