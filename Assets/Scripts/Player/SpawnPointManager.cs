@@ -19,8 +19,6 @@ public class SpawnPointManager: MonoBehaviour
         }
         lastSpawnPoint=i;
 
-        Debug.Log(i);
-
         if(spawnPoints.Length != 0 && NavMesh.SamplePosition( spawnPoints[i].position, out hit, 1f, NavMesh.AllAreas))
         {
             return hit.position;

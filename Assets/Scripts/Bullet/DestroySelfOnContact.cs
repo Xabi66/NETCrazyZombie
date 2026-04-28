@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class DestroySelfOnContact : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+           Destroy(transform.parent.gameObject); 
     }
 }

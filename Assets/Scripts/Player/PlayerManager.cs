@@ -66,15 +66,15 @@ public class PlayerManager : NetworkBehaviour
         txtSpawns.text = newValue.ToString();
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if(IsServer){
-            if (collision.gameObject.CompareTag("Bullet"))
-            {
-                health.TakeDamage(BULLET_DAMAGE);
-            }
-        }
-    }
+    // void OnCollisionEnter(Collision collision)
+    // {
+    //     if(IsServer){
+    //         if (collision.gameObject.CompareTag("Bullet"))
+    //         {
+    //             health.TakeDamage(BULLET_DAMAGE);
+    //         }
+    //     }
+    // }
 
     private void HandleDeath(PlayerHealth h)
     {

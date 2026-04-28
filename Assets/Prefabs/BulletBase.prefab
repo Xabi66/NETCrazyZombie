@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4511143407780678689}
   - component: {fileID: 7452397275509205003}
   - component: {fileID: 1699296954935501381}
-  m_Layer: 0
+  - component: {fileID: 1753880920915176792}
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -83,6 +84,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1753880920915176792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927644516730251195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0b63402b24e8c479561e06d07ddaee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroySelfOnContact
 --- !u!1 &2070482237836331046
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,10 +106,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1322239620655572821}
   - component: {fileID: 3995754744663501225}
-  - component: {fileID: 970424254446932364}
-  m_Layer: 0
+  - component: {fileID: 3906254120215646968}
+  m_Layer: 7
   m_Name: BulletBase
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,8 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf06107d16d794444bb1b5cada1c06eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LifeTime
-  lifeTime: 1
---- !u!114 &970424254446932364
+--- !u!114 &3906254120215646968
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,6 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2070482237836331046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba0b63402b24e8c479561e06d07ddaee, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c8f020b70d723512b7c7e70e6b3232c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DestroySelfOnContact
+  m_EditorClassIdentifier: Assembly-CSharp::BulletMove
+  speed: 10

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DealDamageOnContact : MonoBehaviour
 {
-    [SerializeField] private int damage = 5;
+    public int PLAYER_DAMAGE = 10;
 
     private ulong ownerClientId;
 
@@ -14,21 +14,12 @@ public class DealDamageOnContact : MonoBehaviour
         this.ownerClientId = ownerClientId;
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter(Collision collision)
     {
-        if (col.attachedRigidbody == null) { return; }
-
-        if (col.attachedRigidbody.TryGetComponent<NetworkObject>(out NetworkObject netObj))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (ownerClientId == netObj.OwnerClientId)
-            {
-                return;
-            }
-        }
-
-        if (col.attachedRigidbody.TryGetComponent<PlayerHealth>(out PlayerHealth health))
-        {
-            health.TakeDamage(damage);
+            collision.gameObject.SendMessage("TakeDamage", PLAYER_DAMAGE);
         }
     }
+
 }
